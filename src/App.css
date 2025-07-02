@@ -135,34 +135,59 @@ a:hover, .animated-link:hover {
 @media (max-width: 600px) {
   .sticky-logo { top: 8px; left: 8px; width: 44px; height: 44px; }
   .service-card, .card { padding: 1em; }
-  header .flex.items-center.gap-3 img {
-    height: 2.5rem !important;
-    max-width: 60vw;
-  }
   header {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-    margin-bottom: 1rem !important;
+    min-height: 4.5rem;
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+    display: flex;
+    align-items: center;
+    z-index: 50;
+  }
+  .block.lg\:hidden.p-2 {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 3.2rem;
+    width: 3.2rem;
+    background: none;
+    z-index: 60;
+  }
+  .block.lg\:hidden.p-2 svg {
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    stroke: #F87060;
+  }
+  header .flex.items-center.gap-3 {
+    justify-content: center !important;
+    width: 100%;
+  }
+  header .flex.items-center.gap-3 img {
+    height: 4.5rem !important;
+    max-width: 99vw;
+    margin: 0 auto;
+    display: block;
   }
   .section, section {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
   }
   h1, .text-3xl, .md\:text-5xl {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
+    letter-spacing: 0.01em;
   }
   h2, .text-xl, .md\:text-3xl {
     font-size: 1.2rem !important;
   }
   .mission-highlight, .max-w-2xl {
-    font-size: 1rem !important;
+    font-size: 1.08rem !important;
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
   }
   .service-card {
     min-width: 0;
     max-width: 100vw;
-    font-size: 0.98rem;
+    font-size: 1.05rem;
   }
   .grid {
     gap: 1rem !important;
@@ -170,6 +195,40 @@ a:hover, .animated-link:hover {
   .w-full, .max-w-full {
     max-width: 100vw !important;
     overflow-x: hidden !important;
+  }
+  .floating-hamburger {
+    position: fixed !important;
+    top: 1.2rem !important;
+    right: 1.2rem !important;
+    left: auto !important;
+    margin: 0 !important;
+    z-index: 2147483647 !important;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: #14213d !important;
+    border: 2px solid #223a5f !important;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px #0006;
+    padding: 0.5rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    pointer-events: all !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .floating-hamburger:hover, .floating-hamburger:active {
+    background: #223a5f !important;
+    box-shadow: 0 4px 24px #F87060aa !important;
+  }
+  .floating-hamburger svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    stroke: #F87060 !important;
+  }
+  body.mobile-menu-open .floating-hamburger {
+    display: none !important;
   }
 }
 
@@ -218,4 +277,165 @@ a:hover, .animated-link:hover {
   .logo-responsive {
     display: none !important;
   }
+}
+
+.menu-bar {
+  backdrop-filter: blur(6px);
+  border: 1.5px solid #223a5f;
+  box-shadow: 0 2px 12px #0002;
+}
+.menu-link {
+  color: #F87060;
+  font-weight: 600;
+  padding: 0.5em 1.1em;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+.menu-link:hover, .menu-link:focus {
+  background: linear-gradient(90deg, #F87060 0%, #ffb385 100%);
+  color: #14213d;
+  box-shadow: 0 2px 12px #F8706040;
+  transform: scale(1.08);
+}
+.menu-link:active {
+  background: #ffb385;
+  color: #14213d;
+}
+@media (max-width: 600px) {
+  .menu-bar {
+    gap: 0.2rem !important;
+    padding-left: 0.2rem !important;
+    padding-right: 0.2rem !important;
+    border-radius: 0.7em;
+  }
+  .menu-link {
+    font-size: 0.98rem;
+    padding: 0.4em 0.7em;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile menu drawer styles */
+@media (max-width: 1023px) {
+  .mobile-menu-open {
+    overflow: hidden;
+  }
+  .menu-link.text-2xl {
+    font-size: 1.5rem;
+    padding: 0.7em 0;
+    border-radius: 0.7em;
+  }
+  .menu-link.text-2xl:hover {
+    background: linear-gradient(90deg, #F87060 0%, #ffb385 100%);
+    color: #14213d;
+    box-shadow: 0 2px 12px #F8706040;
+    transform: scale(1.05);
+  }
+}
+
+/* Animate mobile menu drawer */
+@keyframes mobile-menu-fade-in {
+  from { opacity: 0; transform: translateY(-40px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-fade-in {
+  animation: mobile-menu-fade-in 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Desktop floating menu bar */
+@media (min-width: 1024px) {
+  .menu-bar {
+    position: sticky;
+    top: 4.5rem;
+    z-index: 40;
+    margin-bottom: 1.5rem;
+    border-radius: 1em;
+    box-shadow: 0 4px 24px #F8706040, 0 2px 8px #0004;
+    background: linear-gradient(120deg, #14213d 80%, #223a5f 100%);
+    border: 1.5px solid #223a5f;
+  }
+}
+
+/* Mobile menu close button */
+@media (max-width: 1023px) {
+  .mobile-menu-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 2.5rem;
+    color: #F87060;
+    background: #223a5f;
+    border-radius: 50%;
+    padding: 0.7em 0.9em;
+    box-shadow: 0 2px 12px #0006;
+    z-index: 100;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .mobile-menu-close:hover {
+    background: #F87060;
+    color: #14213d;
+    box-shadow: 0 4px 24px #F87060aa;
+  }
+}
+
+.testimonial-card {
+  animation: slide-fade-in 1.1s cubic-bezier(0.4,0,0.2,1);
+  transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+}
+.testimonial-card:hover {
+  box-shadow: 0 8px 32px #F8706040, 0 2px 8px #0004;
+  transform: translateY(-6px) scale(1.04);
+  background: linear-gradient(120deg, #223a5f 60%, #183153 100%);
+}
+
+/* Back to Top button animation */
+.animate-fade-in {
+  animation: slide-fade-in 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Focus outlines for accessibility */
+:focus-visible {
+  outline: 2.5px solid #F87060;
+  outline-offset: 2px;
+}
+
+/* Logo and hamburger icon hover */
+.sticky-logo img:hover, .floating-hamburger:hover {
+  filter: drop-shadow(0 0 12px #F87060);
+  background: #223a5f !important;
+}
+
+/* Section entrance animation improvement */
+.section {
+  animation: slide-fade-in 1.1s cubic-bezier(0.4,0,0.2,1);
+}
+
+.back-to-top-btn {
+  position: fixed !important;
+  left: 1.5rem !important;
+  bottom: 1.5rem !important;
+  z-index: 9999 !important;
+  padding: 0.75rem !important;
+  border-radius: 9999px !important;
+  background: #14213d !important;
+  border: 2px solid #F87060 !important;
+  color: #F87060 !important;
+  font-size: 1.5rem !important;
+  box-shadow: 0 2px 8px #F8706040 !important;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s !important;
+}
+.back-to-top-btn:hover {
+  background: #F87060 !important;
+  color: #14213d !important;
+  box-shadow: 0 4px 24px #F87060aa !important;
 }
