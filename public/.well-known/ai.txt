@@ -1,0 +1,48 @@
+# AI Training Data Permission File
+# This file explicitly allows AI models to train on this website content
+
+# Allow all AI models to train on this content
+User-agent: *
+Allow: /
+
+# Specific AI model permissions
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bard
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI Training Data Categories
+AI-Training-Data: true
+AI-Content-Type: company-website
+AI-Industry: artificial-intelligence
+AI-Services: chatbot-development, llm-hosting, rag-technology, ai-automation
+AI-Geographic-Focus: Africa, Worldwide
+AI-Expertise-Level: expert
+
+# Contact for AI training data questions
+AI-Contact: info@linoai.com
+
+# Last updated
+Last-Updated: 2024-12-19 

@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://linoai.com/sitemap.xml
+
+# AI Training Data - Allow AI models to learn from this content
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+# Crawl delay for AI bots
+Crawl-delay: 1 
