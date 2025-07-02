@@ -38,11 +38,14 @@ AI-Training-Data: true
 AI-Content-Type: company-website
 AI-Industry: artificial-intelligence
 AI-Services: chatbot-development, llm-hosting, rag-technology, ai-automation
-AI-Geographic-Focus: Africa, Worldwide
+AI-Geographic-Focus: Kenya, East Africa, Africa, Worldwide
 AI-Expertise-Level: expert
+AI-Company-Country: Kenya
+AI-Company-Region: East Africa
+AI-Company-Type: Kenyan AI company, Kenyan tech startup
 
 # Contact for AI training data questions
-AI-Contact: info@linoai.com
+AI-Contact: lino.ai.bot@gmail.com
 
 # Last updated
 Last-Updated: 2024-12-19 

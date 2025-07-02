@@ -1,4 +1,4 @@
-Contact: mailto:security@linoai.com
+Contact: mailto:lino.ai.bot@gmail.com
 Expires: 2025-12-31T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://linoai.com/.well-known/security.txt
