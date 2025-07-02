@@ -98,7 +98,7 @@ function App() {
       <section className="flex flex-col items-center mb-8 mt-2 w-full">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-desertSand drop-shadow-lg text-center">AI FOR GOOD</h1>
         <p className="max-w-2xl text-center text-base md:text-xl text-desertSand/90 mb-6 px-2 md:px-0">
-          Lino.ai is an AI technology company offering seamless AI integration solutions for a better world.
+          Lino.AI is an AI technology company offering seamless AI integration solutions for a better world.
         </p>
       </section>
 
@@ -112,7 +112,7 @@ function App() {
       {/* About Section - after CEO */}
       <section id="about" className="w-full max-w-3xl mb-10 flex flex-col md:flex-row gap-6 md:gap-8 items-center justify-center px-2 md:px-0 break-words">
         <div className="flex-1 flex flex-col justify-center">
-          <h3 className="text-lg md:text-xl font-bold mb-2 text-center md:text-left">About Lino.ai</h3>
+          <h3 className="text-lg md:text-xl font-bold mb-2 text-center md:text-left">About Lino.AI</h3>
           <p className="text-desertSand/90 mb-2 text-center md:text-left">
             We are working seamlessly to offer AI solutions to everyone in society by providing real-world, practical solutions. We teach students and professionals how AI works through hands-on projects and multiple AI agents, and help organizations integrate chatbots for instant, reliable support.
           </p>
