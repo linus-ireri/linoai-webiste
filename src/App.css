@@ -40,3 +40,182 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+body, #root {
+  background: linear-gradient(120deg, #14213d 0%, #223a5f 100%);
+  min-height: 100vh;
+  transition: background 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.sticky-logo {
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.sticky-logo:hover {
+  box-shadow: 0 0 16px 4px #F87060aa, 0 2px 8px #0004;
+  transform: scale(1.08) rotate(-3deg);
+  animation: pulse 1.2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { filter: drop-shadow(0 0 0 #F87060); }
+  100% { filter: drop-shadow(0 0 12px #F87060); }
+}
+
+.animated-headline {
+  animation: fade-in 1s cubic-bezier(0.4,0,0.2,1);
+}
+
+.mission-highlight {
+  animation: pulse 2s infinite alternate;
+  background: linear-gradient(90deg, #F87060 10%, #ffb385 90%);
+  color: #14213d;
+  box-shadow: 0 2px 16px #F8706040;
+}
+
+.card, .service-card {
+  transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+  background: linear-gradient(120deg, #183153 60%, #223a5f 100%);
+  box-shadow: 0 2px 8px #0002;
+}
+.card:hover, .service-card:hover {
+  box-shadow: 0 6px 32px #F8706040, 0 2px 8px #0004;
+  transform: translateY(-6px) scale(1.04);
+  background: linear-gradient(120deg, #223a5f 60%, #183153 100%);
+}
+
+a, .animated-link {
+  transition: color 0.2s, text-shadow 0.2s;
+  text-decoration: none;
+  color: #F87060;
+}
+a:hover, .animated-link:hover {
+  color: #ffb385;
+  text-shadow: 0 2px 8px #F87060aa;
+}
+
+.button, .modern-btn {
+  background: linear-gradient(90deg, #F87060 0%, #ffb385 100%);
+  color: #14213d;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6em 1.6em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #F8706040;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.button:hover, .modern-btn:hover {
+  background: linear-gradient(90deg, #ffb385 0%, #F87060 100%);
+  transform: scale(1.07);
+  box-shadow: 0 4px 24px #F87060aa;
+}
+
+.section {
+  animation: slide-fade-in 1.1s cubic-bezier(0.4,0,0.2,1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #14213d;
+}
+::-webkit-scrollbar-thumb {
+  background: #F87060;
+  border-radius: 8px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .sticky-logo { top: 8px; left: 8px; width: 44px; height: 44px; }
+  .service-card, .card { padding: 1em; }
+  header .flex.items-center.gap-3 img {
+    height: 2.5rem !important;
+    max-width: 60vw;
+  }
+  header {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .section, section {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  h1, .text-3xl, .md\:text-5xl {
+    font-size: 2rem !important;
+  }
+  h2, .text-xl, .md\:text-3xl {
+    font-size: 1.2rem !important;
+  }
+  .mission-highlight, .max-w-2xl {
+    font-size: 1rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .service-card {
+    min-width: 0;
+    max-width: 100vw;
+    font-size: 0.98rem;
+  }
+  .grid {
+    gap: 1rem !important;
+  }
+  .w-full, .max-w-full {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
+@keyframes slide-fade-in {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 20% 30%, #F8706022 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, #ffb38522 0%, transparent 60%);
+  animation: bg-move 12s infinite alternate linear;
+}
+@keyframes bg-move {
+  0% { background-position: 20% 30%, 80% 70%; }
+  100% { background-position: 30% 40%, 70% 60%; }
+}
+
+.logo-responsive-mobile {
+  max-width: 98vw;
+  overflow-x: auto;
+  padding: 0.5em 0;
+}
+.logo-responsive-mobile img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .logo-responsive-mobile img {
+    max-width: 98vw;
+    height: auto;
+  }
+  .logo-responsive-mobile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 0;
+  }
+  .logo-responsive {
+    display: none !important;
+  }
+}
