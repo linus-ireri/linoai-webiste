@@ -188,7 +188,25 @@ function App() {
 
         {/* Hero Section */}
         <section className="flex flex-col items-center mb-8 mt-2 w-full section">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-desertSand drop-shadow-lg text-center animated-headline">AI FOR GOOD</h1>
+          <div style={{position: 'relative', display: 'inline-block', width: 'fit-content'}}>
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-desertSand drop-shadow-lg text-center animated-headline">AI FOR GOOD</h1>
+            <svg className="hero-star" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#glow)">
+                <path d="M16 4l2.2 6.6L25 12l-5.4 4.2L21 25l-5-3.2L11 25l1.4-8.8L7 12l6.8-1.4L16 4z" fill="#fff"/>
+                <path d="M16 4l2.2 6.6L25 12l-5.4 4.2L21 25l-5-3.2L11 25l1.4-8.8L7 12l6.8-1.4L16 4z" fill="#F87060" fillOpacity="0.5"/>
+              </g>
+              <defs>
+                <filter id="glow" x="-10" y="-10" width="52" height="52" filterUnits="userSpaceOnUse">
+                  <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <animateMotion dur="2.2s" repeatCount="indefinite" keyPoints="0;0.25;0.5;0.75;1" keyTimes="0;0.25;0.5;0.75;1" path="M 8 8 Q 32 0 56 8 Q 64 24 56 40 Q 32 48 8 40 Q 0 24 8 8 Z"/>
+            </svg>
+          </div>
           <p className="max-w-2xl text-center text-base md:text-xl text-desertSand/90 mb-2 px-2 md:px-0">
             Lino.AI Co. Ltd. is an AI technology company offering seamless AI integration solutions for a better world.
           </p>
@@ -212,7 +230,10 @@ function App() {
               We are working seamlessly to offer AI solutions to everyone in society by providing real-world, practical solutions. We teach students and professionals how AI works through hands-on projects and multiple AI agents, and help organizations integrate chatbots for instant, reliable support.
             </p>
             <p className="text-desertSand/90 mb-2 text-center md:text-left">
-              We specialize in integrating agentic chatbots on websites and portals for instant responses and direct inquiries, ensuring there is no delay in conversation flow. In institutions, we integrate chatbots on portals so students, employees, and anyone inquiring can get feedback as fast as possible. We also create modern, responsive websites for individuals, businesses, and institutions.
+              We specialize in integrating agentic chatbots and developing AI agents for websites and portals. Our AI agents can automate tasks, provide intelligent support, and act autonomously to solve complex problems. Currently, our AI agents assist with customer support, data analysis, and workflow automation. In the future, we envision AI agents evolving to become even more autonomous, capable of learning from their environment, collaborating with humans, and driving innovation across industries.
+            </p>
+            <p className="text-desertSand/90 mb-2 text-center md:text-left">
+              We also create modern, responsive websites for individuals, businesses, and institutions.
             </p>
             <p className="text-desertSand/90 mb-2 text-center md:text-left">
               Looking ahead, Lino.AI Co. Ltd. is committed to scaling into a comprehensive AI technology company that supports and empowers all sectors—education, healthcare, finance, and legal, among others. Our mission is to provide accessible, free, and reliable AI-driven research and support, making information retrieval seamless and transparent. We strive to bridge knowledge gaps and foster innovation, ensuring that individuals and organizations in every field can benefit from the transformative power of artificial intelligence.
@@ -231,26 +252,37 @@ function App() {
               {
                 title: 'Agentic Chatbot Integration',
                 desc: 'We integrate agentic chatbots on websites and portals for instant responses and direct inquiries, ensuring seamless conversation flow.',
+                emoji: '🤖',
+              },
+              {
+                title: 'AI Agents Development',
+                desc: 'We design and build AI agents that automate tasks, provide intelligent support, and act autonomously to solve complex problems for your business or institution.',
+                emoji: '🧠',
               },
               {
                 title: 'Custom Chatbots',
                 desc: 'Custom AI chatbots for support, inquiries, and automation for businesses and institutions.',
+                emoji: '💬',
               },
               {
                 title: 'Website Creation',
                 desc: 'We design and build modern, responsive websites for individuals, businesses, and institutions.',
+                emoji: '💻',
               },
               {
                 title: 'AI Education',
                 desc: 'Lessons on AI use, software, websites, and content creation.',
+                emoji: '📚',
               },
               {
                 title: 'Workshops',
                 desc: 'Workshops for students and institutions on practical AI and chatbot integration.',
+                emoji: '🛠️',
               },
               {
                 title: 'Technical Writing',
-                desc: 'Technical writing for presentations and reports.',
+                desc: 'Professional technical writing for publications, presentations, and reports, utilizing LaTeX to ensure high-quality, well-formatted, and publication-ready documents.',
+                emoji: '📝',
               },
             ].map((service, idx) => (
               <div
@@ -258,10 +290,12 @@ function App() {
                 className="service-card rounded-xl p-4 md:p-6 flex flex-col items-center border border-transparent group"
               >
                 <div className="w-10 h-10 md:w-12 md:h-12 mb-3 flex items-center justify-center rounded-full bg-desertSand/20 group-hover:bg-desertSand/40">
-                  <span className="text-xl md:text-2xl font-bold text-desertSand">{String.fromCodePoint(0x1F916 + idx)}</span>
+                  <div className="emoji-circle">
+                    <span className="text-2xl md:text-3xl font-bold text-desertSand">{service.emoji}</span>
+                  </div>
                 </div>
                 <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-desertSand text-center">{service.title}</h3>
-                <p className="text-center text-desertSand/80 group-hover:text-desertSand/100">{service.desc}</p>
+                <p className="text-center text-desertSand/80 group-hover:text-desertSand/100 service-desc">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -292,10 +326,10 @@ function App() {
               },
             ].map((t, idx) => (
               <div key={t.name} className="testimonial-card bg-[#183153] rounded-xl p-6 shadow-xl flex flex-col items-center text-center border border-transparent animate-fade-in" style={{animationDelay: `${0.1 + idx * 0.1}s`}}>
-                <img src={t.img} alt={t.name} className="w-16 h-16 rounded-full object-cover border-2 border-orange-400 mb-3 shadow" />
+                <img src={t.img} alt={t.name} className="testimonial-avatar w-16 h-16 rounded-full object-cover mb-3 shadow" />
                 <div className="font-bold text-desertSand text-lg mb-1">{t.name}</div>
                 <div className="text-orange-400 text-sm mb-2">{t.role}</div>
-                <div className="text-desertSand/90 text-base">“{t.text}”</div>
+                <div className="text-desertSand/90 text-base">"{t.text}"</div>
               </div>
             ))}
           </div>
