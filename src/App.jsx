@@ -26,6 +26,13 @@ const GmailIcon = () => (
   </svg>
 );
 
+const XIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="hover:scale-110 transition-transform duration-200">
+    <rect width="24" height="24" rx="5" fill="#F87060"/>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#fff"/>
+  </svg>
+);
+
 function App() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -328,43 +335,53 @@ function App() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="w-full max-w-5xl mb-10 px-2 md:px-0 break-words section">
+        <section id="services" className="w-full max-w-6xl mb-10 px-2 md:px-0 break-words section">
           <h2 className="text-xl md:text-3xl font-bold mb-6 text-center">Our Services</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                title: 'Agentic Chatbot Integration',
-                desc: 'We integrate agentic chatbots on websites and portals for instant responses and direct inquiries, ensuring seamless conversation flow.',
+                title: 'Agentic AI Integration',
+                desc: 'Seamless integration of intelligent AI agents that can autonomously handle complex tasks, make decisions, and provide contextual responses across your business, institution or company digital platforms.',
                 emoji: '🤖',
               },
               {
-                title: 'AI Agents Development',
-                desc: 'We design and build AI agents that automate tasks, provide intelligent support, and act autonomously to solve complex problems for your business or institution.',
-                emoji: '🧠',
-              },
-              {
-                title: 'Custom Chatbots',
-                desc: 'Custom AI chatbots for support, inquiries, and automation for businesses and institutions.',
+                title: 'Custom AI Chatbots',
+                desc: 'Tailored conversational AI solutions designed specifically for your business, institution or company needs, from customer support to lead generation and process automation.',
                 emoji: '💬',
               },
               {
-                title: 'Website Creation',
-                desc: 'We design and build modern, responsive websites for individuals, businesses, and institutions.',
-                emoji: '💻',
+                title: 'Local LLM Hosting',
+                desc: 'Secure, private hosting of Large Language Models on your business, institution or company infrastructure, ensuring data sovereignty and compliance with local regulations.',
+                emoji: '🏠',
               },
               {
-                title: 'AI Education',
-                desc: 'Lessons on AI use, software, websites, and content creation.',
+                title: 'RAG Vector Solutions',
+                desc: 'Retrieval-Augmented Generation systems with advanced vector databases for accurate, context-aware responses from your business, institution or company proprietary knowledge base.',
+                emoji: '🔍',
+              },
+              {
+                title: 'AI Automation Services',
+                desc: 'End-to-end automation solutions using AI agents to streamline workflows, reduce manual tasks, and improve operational efficiency for your business, institution or company.',
+                emoji: '⚡',
+              },
+              {
+                title: 'AI Education & Training',
+                desc: 'Comprehensive AI literacy programs, hands-on workshops, and certification courses for students, professionals, and organizations in your business, institution or company.',
                 emoji: '📚',
               },
               {
-                title: 'Workshops',
-                desc: 'Workshops for students and institutions on practical AI and chatbot integration.',
-                emoji: '🛠️',
+                title: 'AI Consulting',
+                desc: 'Strategic AI implementation guidance, technology assessment, and roadmap development to maximize your business, institution or company AI investment returns.',
+                emoji: '🎯',
               },
               {
-                title: 'Technical Writing',
-                desc: 'Professional technical writing for publications, presentations, and reports, utilizing LaTeX to ensure high-quality, well-formatted, and publication-ready documents.',
+                title: 'Website Development',
+                desc: 'Modern, responsive websites with integrated AI capabilities, optimized for performance, accessibility, and user experience for your business, institution or company.',
+                emoji: '💻',
+              },
+              {
+                title: 'Technical Documentation',
+                desc: 'Professional technical writing and documentation services using LaTeX, ensuring publication-ready quality for research and business materials for your business, institution or company.',
                 emoji: '📝',
               },
             ].map((service, idx) => (
@@ -427,6 +444,7 @@ function App() {
           <div className="flex flex-row gap-4 justify-center mt-4 block lg:flex">
             <a href="https://instagram.com/lino.ai.co" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="animated-link"><InstagramIcon /></a>
             <a href="https://tiktok.com/@lino.ai.co" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="animated-link"><TikTokIcon /></a>
+            <a href="https://x.com/linoaico" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="animated-link"><XIcon /></a>
             <a href="mailto:lino.ai.bot@gmail.com" aria-label="Gmail" className="animated-link"><GmailIcon /></a>
           </div>
         </section>

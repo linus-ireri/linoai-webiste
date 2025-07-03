@@ -145,10 +145,14 @@ body, #root {
   transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
   background: linear-gradient(120deg, var(--aura-navy) 80%, var(--aura-navy-secondary) 100%);
   box-shadow: 0 2px 8px #0002;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 .card:hover, .service-card:hover {
   box-shadow: 0 6px 32px #F8706040, 0 2px 8px #0004;
-  transform: translateY(-6px) scale(1.04);
+  transform: translateY(-2px);
   background: linear-gradient(120deg, var(--aura-navy-secondary) 80%, var(--aura-navy) 100%);
 }
 
@@ -500,8 +504,12 @@ html {
   white-space: normal;
   font-size: 1.04rem;
   line-height: 1.5;
-  padding: 0.1em 0.2em;
+  padding: 0.2em 0.4em;
   max-width: 100%;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
 }
 
 .service-card .emoji-circle {
