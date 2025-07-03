@@ -49,8 +49,14 @@
   animation: fade-in 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 
+/* Replace navy blues with darker, more vibrant navy for aura */
+:root {
+  --aura-navy: #0a1026;
+  --aura-navy-secondary: #101a36;
+}
+
 body, #root {
-  background: linear-gradient(120deg, #14213d 0%, #223a5f 100%);
+  background: linear-gradient(120deg, var(--aura-navy) 0%, var(--aura-navy-secondary) 100%);
   min-height: 100vh;
   transition: background 0.8s cubic-bezier(0.4,0,0.2,1);
 }
@@ -130,20 +136,20 @@ body, #root {
 
 .mission-highlight {
   animation: pulse 2s infinite alternate;
-  background: linear-gradient(90deg, #F87060 10%, #ffb385 90%);
-  color: #14213d;
+  /* background: linear-gradient(90deg, #F87060 10%, #ffb385 90%); */
+  /* color: #14213d; */
   box-shadow: 0 2px 16px #F8706040;
 }
 
 .card, .service-card {
   transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
-  background: linear-gradient(120deg, #183153 60%, #223a5f 100%);
+  background: linear-gradient(120deg, var(--aura-navy) 80%, var(--aura-navy-secondary) 100%);
   box-shadow: 0 2px 8px #0002;
 }
 .card:hover, .service-card:hover {
   box-shadow: 0 6px 32px #F8706040, 0 2px 8px #0004;
   transform: translateY(-6px) scale(1.04);
-  background: linear-gradient(120deg, #223a5f 60%, #183153 100%);
+  background: linear-gradient(120deg, var(--aura-navy-secondary) 80%, var(--aura-navy) 100%);
 }
 
 a, .animated-link {
@@ -431,7 +437,7 @@ html {
     margin-bottom: 1.5rem;
     border-radius: 1em;
     box-shadow: 0 4px 24px #F8706040, 0 2px 8px #0004;
-    background: linear-gradient(120deg, #14213d 80%, #223a5f 100%);
+    background: linear-gradient(120deg, var(--aura-navy) 80%, var(--aura-navy-secondary) 100%);
     border: 1.5px solid #223a5f;
   }
 }
@@ -443,7 +449,7 @@ html {
 .testimonial-card:hover {
   box-shadow: 0 8px 32px #F8706040, 0 2px 8px #0004;
   transform: translateY(-6px) scale(1.04);
-  background: linear-gradient(120deg, #223a5f 60%, #183153 100%);
+  background: linear-gradient(120deg, var(--aura-navy-secondary) 80%, var(--aura-navy) 100%);
 }
 
 /* Back to Top button animation */
@@ -624,4 +630,164 @@ html {
       0 0 3px #005bea22;
     filter: brightness(1.01);
   }
+}
+
+/* Replace all #14213d, #223a5f, #183153, etc. */
+
+.menu-bar,
+header,
+.card,
+.service-card,
+.testimonial-card,
+.section,
+.bg-linoBlue,
+.bg-\[\#14213d\],
+.bg-\[\#14213d\]\/70,
+.bg-\[\#14213d\]\/60,
+.bg-\[\#183153\],
+.bg-\[\#223a5f\] {
+  background: linear-gradient(120deg, var(--aura-navy) 80%, var(--aura-navy-secondary) 100%) !important;
+}
+
+.bg-\[\#14213d\] { background: var(--aura-navy) !important; }
+.bg-\[\#14213d\]\/70 { background: rgba(10,16,38,0.7) !important; }
+.bg-\[\#14213d\]\/60 { background: rgba(10,16,38,0.6) !important; }
+.bg-\[\#183153\] { background: var(--aura-navy-secondary) !important; }
+.bg-\[\#223a5f\] { background: var(--aura-navy-secondary) !important; }
+
+.border-desertSand,
+.border-\[\#223a5f\] {
+  border-color: var(--aura-navy-secondary) !important;
+}
+
+.text-\[\#14213d\],
+.text-\[\#223a5f\],
+.text-\[\#183153\] {
+  color: var(--aura-navy) !important;
+}
+
+/* Update drop-shadows and other effects if needed */
+
+/* AI Frontiers Section Styles */
+#ai-frontiers.ai-frontiers-section {
+  background: radial-gradient(ellipse at 60% 0%, #101a36 0%, #0a1026 80%, #080c1a 100%);
+  box-shadow: 0 0 80px 0 #00c6fb22 inset;
+  border-radius: 2.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  margin-bottom: 3rem;
+}
+.ai-frontiers-card {
+  background: rgba(10,16,38,0.98);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 16px 0 #00c6fb33, 0 2px 24px #0a102655;
+  border: 2px solid #101a36;
+  padding: 2.2rem 1.5rem 1.7rem 1.5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s, border-color 0.4s, transform 0.3s;
+  animation: ai-card-fade-in 1.1s cubic-bezier(0.4,0,0.2,1);
+  animation-fill-mode: both;
+  animation-delay: 0.1s;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ai-frontiers-card h3 {
+  font-family: 'Audiowide', 'Orbitron', Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #00c6fb;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 8px #00c6fb55;
+}
+.ai-frontiers-card p {
+  font-size: 1.05rem;
+  color: #eaf6ff;
+  line-height: 1.6;
+  margin: 0;
+}
+.ai-frontiers-card:hover {
+  box-shadow: 0 0 32px 0 #00c6fb99, 0 4px 32px #0a1026cc;
+  border-color: #00c6fb;
+  transform: translateY(-6px) scale(1.04);
+  animation: ai-card-glow-pulse 1.2s infinite alternate;
+}
+@keyframes ai-card-fade-in {
+  from { opacity: 0; transform: translateY(32px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes ai-card-glow-pulse {
+  0% { box-shadow: 0 0 16px 0 #00c6fb33, 0 2px 24px #0a102655; }
+  100% { box-shadow: 0 0 32px 0 #00c6fb99, 0 4px 32px #0a1026cc; }
+}
+
+@media (max-width: 640px) {
+  #ai-frontiers.ai-frontiers-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #ai-frontiers .grid {
+    gap: 0.5rem !important;
+  }
+  .ai-frontiers-card {
+    width: 96% !important;
+    max-width: 96vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .ai-frontiers-card p, .ai-frontiers-card h3 {
+    color: #fff !important;
+    text-shadow: 0 1px 4px #000a;
+  }
+  #ai-frontiers .grid,
+  .ai-in-action-overlay-scroll .grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem;
+    width: 100% !important;
+  }
+  .ai-in-action-overlay-scroll {
+    padding-bottom: 3.5rem !important;
+  }
+  .ai-in-action-overlay-scroll .ai-frontiers-card:last-child {
+    margin-bottom: 2.5rem;
+  }
+  .ai-in-action-card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .ai-in-action-overlay-scroll {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+  }
+  .ai-in-action-overlay-scroll .ai-frontiers-card {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+    min-height: unset !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/* Emoji pulse-glow on hover for both AI Frontiers and AI in Action cards */
+.ai-frontiers-card:hover .emoji-glow,
+.ai-in-action-card:hover .emoji-glow {
+  filter: drop-shadow(0 0 24px #00c6fb) drop-shadow(0 0 48px #00c6fb88);
+  text-shadow: 0 0 32px #00c6fb, 0 0 64px #00c6fb88;
+}
+
+.ai-frontiers-card .emoji-glow,
+.ai-in-action-card .emoji-glow {
+  transition: filter 0.3s, text-shadow 0.3s;
 }
