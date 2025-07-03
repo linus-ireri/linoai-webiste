@@ -394,6 +394,23 @@ html {
     box-shadow: 0 2px 12px #F8706040;
     transform: scale(1.05);
   }
+  .mobile-menu-close {
+    font-size: 2.5rem;
+    color: #F87060;
+    background: #223a5f;
+    border-radius: 50%;
+    padding: 0.7em 0.9em;
+    box-shadow: 0 2px 12px #0006;
+    z-index: 100;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .mobile-menu-close:hover {
+    background: #F87060;
+    color: #14213d;
+    box-shadow: 0 4px 24px #F87060aa;
+  }
 }
 
 /* Animate mobile menu drawer */
@@ -416,30 +433,6 @@ html {
     box-shadow: 0 4px 24px #F8706040, 0 2px 8px #0004;
     background: linear-gradient(120deg, #14213d 80%, #223a5f 100%);
     border: 1.5px solid #223a5f;
-  }
-}
-
-/* Mobile menu close button */
-@media (max-width: 1023px) {
-  .mobile-menu-close {
-    position: absolute;
-    top: 1.2rem;
-    right: 1.2rem;
-    font-size: 2.5rem;
-    color: #F87060;
-    background: #223a5f;
-    border-radius: 50%;
-    padding: 0.7em 0.9em;
-    box-shadow: 0 2px 12px #0006;
-    z-index: 100;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  }
-  .mobile-menu-close:hover {
-    background: #F87060;
-    color: #14213d;
-    box-shadow: 0 4px 24px #F87060aa;
   }
 }
 
@@ -584,5 +577,51 @@ html {
   100% {
     box-shadow: 0 2px 12px #F8706040, 0 0 0 #F87060;
     border-color: #fff;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.elite-banner-glow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.elite-banner-text {
+  font-family: 'Audiowide', 'Orbitron', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: 0.06em;
+  background: linear-gradient(90deg, #00c6fb 0%, #005bea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow:
+    0 0 1.5px #60aaff33,
+    0 0 3px #005bea22;
+  animation: blue-glow-pulse-minimal 2.2s infinite alternate;
+}
+@keyframes blue-glow-pulse-minimal {
+  0% {
+    text-shadow:
+      0 0 1.5px #60aaff33,
+      0 0 3px #005bea22;
+    filter: brightness(1.01);
+  }
+  50% {
+    text-shadow:
+      0 0 3px #60aaff44,
+      0 0 6px #005bea33;
+    filter: brightness(1.05);
+  }
+  100% {
+    text-shadow:
+      0 0 1.5px #60aaff33,
+      0 0 3px #005bea22;
+    filter: brightness(1.01);
   }
 }

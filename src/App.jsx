@@ -1,6 +1,7 @@
 import './App.css';
 import LinoLogo from './assets/LinoLogo.svg';
 import CeoPhoto from './assets/ceo_profile.jpg';
+import LinoBulb from './assets/LinoBulb.svg';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -103,7 +104,7 @@ function App() {
   return (
     <>
       {/* Floating hamburger menu icon (always top right, rendered in portal) */}
-      {ReactDOM.createPortal(
+      {!mobileMenuOpen && ReactDOM.createPortal(
         <button className="fixed top-3 right-3 z-50 p-2 focus:outline-none floating-hamburger" aria-label="Open menu" onClick={() => setMobileMenuOpen(true)} style={{background: '#14213d', display: 'flex', opacity: 1, visibility: 'visible', zIndex: 2147483647, position: 'fixed', top: '1.2rem', right: '1.2rem', left: 'auto', margin: 0, border: '2px solid #223a5f', borderRadius: '50%'}}>
           <span className="sr-only">Open menu</span>
           <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="#F87060" strokeWidth="2">
@@ -129,6 +130,7 @@ function App() {
         </header>
         {/* Desktop: Floating sticky menu bar */}
         <nav className="hidden lg:flex sticky top-[4.5rem] z-40 w-full flex-row items-center justify-center gap-2 md:gap-6 py-2 px-1 md:px-8 bg-[#14213d] bg-opacity-95 shadow-md rounded-xl mb-4 menu-bar">
+          <img src={LinoBulb} alt="Lino.AI Bulb Logo" className="h-8 w-8 mr-2 align-middle" style={{display: 'inline-block'}} />
           <a href="#ceo" className="menu-link">Meet Our CEO</a>
           <a href="#about" className="menu-link">About Lino.AI</a>
           <a href="#services" className="menu-link">Our Services</a>
@@ -136,9 +138,16 @@ function App() {
         </nav>
         {/* Mobile menu drawer */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 z-50 bg-[#14213de6] flex flex-col items-center justify-start pt-24 px-6 animate-fade-in lg:hidden" onClick={() => setMobileMenuOpen(false)}>
-            <button className="mobile-menu-close" aria-label="Close menu" onClick={e => { e.stopPropagation(); setMobileMenuOpen(false); }}>&times;</button>
-            <nav className="flex flex-col gap-6 w-full max-w-xs text-center mt-4">
+          <div className="fixed inset-0 z-50 bg-[#14213de6] flex flex-col items-center justify-center px-6 animate-fade-in" style={{width: '100vw', height: '100vh', top: 0, left: 0, right: 0, bottom: 0, position: 'fixed'}}>
+            <button
+              className="mobile-menu-close"
+              style={{position: 'absolute', top: '1.2rem', right: '1.2rem', fontSize: '2.2rem', lineHeight: 1, width: '2.6rem', height: '2.6rem', borderRadius: '50%', background: 'rgba(20,33,61,0.95)', color: '#F87060', border: 'none', cursor: 'pointer', pointerEvents: 'auto', zIndex: 1001}}
+              aria-label="Close menu"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              &times;
+            </button>
+            <nav className="flex flex-col gap-6 w-full max-w-xs text-center mt-24">
               <a href="#ceo" className="menu-link text-2xl" onClick={() => setMobileMenuOpen(false)}>Meet Our CEO</a>
               <a href="#about" className="menu-link text-2xl" onClick={() => setMobileMenuOpen(false)}>About Lino.AI</a>
               <a href="#services" className="menu-link text-2xl" onClick={() => setMobileMenuOpen(false)}>Our Services</a>
@@ -215,6 +224,11 @@ function App() {
           </p>
         </section>
 
+        {/* Elite Professionals Banner */}
+        <div className="elite-banner-glow w-full flex justify-center mb-10">
+          <span className="elite-banner-text">500 Diverse, Elite &amp; Ethical AI Professionals by 2030</span>
+        </div>
+
         {/* CEO Section - independent */}
         <section id="ceo" className="w-full max-w-2xl mb-8 flex flex-col items-center justify-center px-2 md:px-0 section">
           <h3 className="text-xl md:text-2xl font-bold mb-3 text-center break-words">Meet Our CEO</h3>
@@ -235,6 +249,9 @@ function App() {
             <p className="text-desertSand/90 mb-2 text-center md:text-left">
               We also create modern, responsive websites for individuals, businesses, and institutions.
             </p>
+            <div className="about-goal-highlight text-center md:text-left font-semibold text-[#00c6fb] bg-[#14213d]/60 rounded-lg px-4 py-2 my-4 shadow-md" style={{fontStyle: 'italic', fontFamily: 'Audiowide, Orbitron, Arial, sans-serif', letterSpacing: '0.04em'}}>
+              Our goal: 500 Diverse, Elite & Ethical AI Professionals by 2030.
+            </div>
             <p className="text-desertSand/90 mb-2 text-center md:text-left">
               Looking ahead, Lino.AI Co. Ltd. is committed to scaling into a comprehensive AI technology company that supports and empowers all sectors—education, healthcare, finance, and legal, among others. Our mission is to provide accessible, free, and reliable AI-driven research and support, making information retrieval seamless and transparent. We strive to bridge knowledge gaps and foster innovation, ensuring that individuals and organizations in every field can benefit from the transformative power of artificial intelligence.
             </p>
